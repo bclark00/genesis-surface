@@ -1,0 +1,25 @@
+<!-- RibosomeWindow.xaml — Genesis.Windows.Ribosome
+     WPF Window hosting a WebView2 render surface.
+
+     Architecture (SURFACE-CHANNEL-001):
+       WPF shell   owns: chrome, resize, snap, DPI, z-order
+       WebView2    owns: render surface (Chromium, no CefSharp dependency)
+       SurfaceChannel: PostWebMessageAsJson / WebMessageReceived DOM bridge
+
+     Content is set by SurfaceChannel.SendAsync() — no page navigation after init.
+     Managed by RibosomeHost (multi-window named surface registry).
+-->
+<Window
+    x:Class="Genesis.Windows.Ribosome.RibosomeWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+    Background="#0a0a0a"
+    WindowStyle="SingleBorderWindow"
+    AllowsTransparency="False"
+    MinWidth="400" MinHeight="300">
+  <Grid>
+    <!-- WebView2 fills the entire window — WPF chrome is invisible border only -->
+    <wv2:WebView2 x:Name="WebView" />
+  </Grid>
+</Window>

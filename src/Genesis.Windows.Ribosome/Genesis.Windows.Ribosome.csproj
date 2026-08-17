@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Windows-only: requires WPF + WebView2 -->
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>Genesis.Windows.Ribosome</RootNamespace>
+    <AssemblyName>Genesis.Windows.Ribosome</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Genesis.Surface.Abstractions/Genesis.Surface.Abstractions.csproj" />
+    <ProjectReference Include="../Genesis.Surface.Projectors/Genesis.Surface.Projectors.csproj" />
+    <ProjectReference Include="../Genesis.Surface.Runtime/Genesis.Surface.Runtime.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- WebView2: embedded Chromium for WPF — replaces CefSharp -->
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2535.41" />
+  </ItemGroup>
+</Project>

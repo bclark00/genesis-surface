@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- net10.0: no WPF, no Windows dependency — projectable on any host -->
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>Genesis.Surface.Abstractions</RootNamespace>
+    <AssemblyName>Genesis.Surface.Abstractions</AssemblyName>
+    <!-- System.Text.Json source gen — required for SurfaceJsonContext -->
+    <JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>
+  </PropertyGroup>
+  <!-- No project references: this is the base contract layer -->
+  <!-- Consumers: Genesis.Surface.Projectors, Genesis.Windows.Ribosome -->
+</Project>

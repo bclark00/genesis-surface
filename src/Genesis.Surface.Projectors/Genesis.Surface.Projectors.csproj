@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- net10.0: no WPF dependency. Runs on any host. -->
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>Genesis.Surface.Projectors</RootNamespace>
+    <AssemblyName>Genesis.Surface.Projectors</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Genesis.Surface.Abstractions/Genesis.Surface.Abstractions.csproj" />
+  </ItemGroup>
+</Project>
